@@ -112,18 +112,33 @@ export const tables = {
 
 export const sampleQueries = [
   {
-    name: 'Top Selling Products',
-    query: 'SELECT p.name, COUNT(o.id) as sales_count FROM products p JOIN orders o ON p.id = o.product_id GROUP BY p.id ORDER BY sales_count DESC LIMIT 10',
-    description: 'Shows the top 10 selling products'
+    name: 'View All Customers',
+    query: 'SELECT * FROM customers',
+    description: 'Display all customer records'
   },
   {
-    name: 'Customer Orders Summary',
-    query: 'SELECT c.name, COUNT(o.id) as order_count, SUM(o.amount) as total_spent FROM customers c JOIN orders o ON c.id = o.customer_id GROUP BY c.id',
-    description: 'Summary of orders and spending by customer'
+    name: 'Count Total Orders',
+    query: 'SELECT COUNT(*) FROM orders',
+    description: 'Get the total number of orders in the system'
   },
   {
-    name: 'Low Stock Alert',
-    query: 'SELECT name, stock FROM products WHERE stock < 20 ORDER BY stock ASC',
-    description: 'Products with low stock (less than 20 units)'
+    name: 'View Products',
+    query: 'SELECT * FROM products',
+    description: 'List all products with their details'
+  },
+  {
+    name: 'Employee List',
+    query: 'SELECT * FROM employees',
+    description: 'View all employee records'
+  },
+  {
+    name: 'Inventory Status',
+    query: 'SELECT * FROM inventory',
+    description: 'Check current inventory levels'
+  },
+  {
+    name: 'Recent Transactions',
+    query: 'SELECT * FROM transactions',
+    description: 'View all transactions'
   }
 ];
